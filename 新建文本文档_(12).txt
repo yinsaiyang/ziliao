@@ -1,4 +1,4 @@
 https://edu.51cto.com/course/13193.html?source=so
 https://carbon.now.sh
 https://github.com/welliamcao/OpsManage
-https://github.com/ageitgey/face_recognition
+https://github.com/ageitgey/face_recognition 人脸识别
