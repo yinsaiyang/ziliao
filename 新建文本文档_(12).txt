@@ -3,3 +3,4 @@ https://carbon.now.sh
 https://github.com/welliamcao/OpsManage
 https://github.com/ageitgey/face_recognition 人脸识别
 https://blog.51cto.com/3379770/1912099
+https://jsproxy.cf/  代理
