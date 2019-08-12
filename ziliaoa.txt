@@ -2,3 +2,4 @@ https://edu.51cto.com/course/13193.html?source=so
 https://blog.51cto.com/lingxudong/2397209  //elk
 https://feichashao.com/aws-sns-email-format/
 yijiayi@2019
+https://www.codercto.com/a/53888.html  //jenkinsfile
