@@ -1,0 +1,24 @@
+#!/bin/bash
+#增量备份脚本
+DB_user='root'
+DB_passwd='centos123'
+DB_host='localhost'
+DB_conf='/etc/my.cnf'
+Today=`date +%F`
+Yesterday=`date -d '-1 day' +%F`
+BackupPath="/backups/incr/"
+dir=`mkdir /backups/incr/$Today`
+Path="/backups/incr/$Today"
+full="/backups/full/$Yesterday"
+
+if [ ! -d $BackupPath ];then
+	mkdir -p $BackupPath
+fi
+$dir
+
+if [ "$(date +%w)" -eq "2" ];then #星期二删除之前增量备份数据库文件,重新开始做增量备份
+     rm -rf /backups/incr/*  &&  innobackupex --defaults-file=$DB_conf --user=$DB_user --password=$DB_passwd --host=$DB_host --no-timestamp  --incremental --incremental-basedir="$full" "$Path"  &> "$BackupPath/$Today".log 
+else
+       innobackupex --defaults-file=$DB_conf --user=$DB_user --password=$DB_passwd --host=$DB_host --no-timestamp  --incremental --incremental-basedir="$BackupPath/$Yesterday" "$Path"  &> "$BackupPath/$Today".log
+fi
+
